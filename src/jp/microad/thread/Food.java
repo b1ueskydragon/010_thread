@@ -2,12 +2,15 @@ package jp.microad.thread;
 
 public class Food {
 	
-	String food = "Chicken";
+	String food = "チキン";
 	String newfood = "";
 	
 	// コンストラクタ
 	Food(String food){
 		this.food = food;
+	}
+	Food(){
+		this.newfood = food;
 	}
 
 }
