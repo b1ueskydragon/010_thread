@@ -23,7 +23,8 @@ public class Fridge {
 		while (true) {
 			foodlist.add(putFood);
 			System.out.println("パパが" + putFood.food + "を追加しました" + ":" + foodlist.size() + "個");
-			Thread.sleep(1000);
+			Thread.sleep(1500);
+			// ちゃんが消費しやすくするために、もうちょっと待ってあげる・・・。
 		}
 
 	}
@@ -49,10 +50,6 @@ public class Fridge {
 
 	public synchronized void syncFridge(Food food, Fridge fridge, String name) {
 		// 動作の制限（協調）
-		
-		// Dad dad = new Dad();
-		// Me me = new Me(name);
-
 		try {
 			// 手元にフードがあれば冷蔵庫に追加できる
 			if (food != null) {
