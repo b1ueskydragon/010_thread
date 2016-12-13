@@ -32,13 +32,13 @@ public class Fridge {
 		// 私は、Foodがないと取り除けない
 		if (foodlist.isEmpty() == true) {
 			System.out.println(foodlist.size() + "個なので" + name + "は待ちます");
-			Thread.sleep(1000);
+			Thread.sleep(500);
 		} else {
 			int sizewas = foodlist.size();
 			foodlist.remove(0);
 			int sizenow = foodlist.size();
 			System.out.println(name + "が" +(sizewas - sizenow) + "個食べました" + ":" + foodlist.size() + "個");
-			Thread.sleep(500);
+			Thread.sleep(300);
 		}
 	}
 
