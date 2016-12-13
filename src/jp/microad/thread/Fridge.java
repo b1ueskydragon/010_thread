@@ -34,8 +34,10 @@ public class Fridge {
 			System.out.println(foodlist.size() + "個なので" + name + "は待ちます");
 			Thread.sleep(1000);
 		} else {
+			int sizewas = foodlist.size();
 			foodlist.remove(0);
-			System.out.println(name + "が" + "を食べました" + ":" + foodlist.size() + "個");
+			int sizenow = foodlist.size();
+			System.out.println(name + "が" +(sizenow - sizewas) + "個食べました" + ":" + foodlist.size() + "個");
 			Thread.sleep(500);
 		}
 	}
