@@ -14,35 +14,29 @@ public class Fridge {
 	 */
 
 	List<Food> foodlist = new ArrayList<>();
-	int sizenow = 0;
 	// バッファの中の入れ箱を初期化
 
 	// 主語なしの「協調してほしい動作」だけをつくる。両方。
-	public void put(Food putFood, String dadname) throws InterruptedException {
+	// Fridgeクラスの外では呼ばれてはならない（呼ばれて良いものは syncされたメソッドのみ）
+	
+	private void put(Food putFood, String dadname) throws InterruptedException {
 		// 何があってもお父さんはずっと入れ続けられる
-		while (true) {
-			foodlist.add(putFood); 
-			sizenow = sizenow +1;
-			System.out.println(dadname + "が" + putFood.food + "を追加しました" + ":" + sizenow + "個");
-			Thread.sleep(1500);
-			// ちゃんが消費しやすくするために、もうちょっと待ってあげる・・・。
-		}
+		int sizewas = foodlist.size();
+		foodlist.add(putFood);
+		int sizenow = foodlist.size();
+		System.out.println(dadname + "が" + putFood.food + "を" + (sizenow - sizewas) + "個追加しました" + ":" + foodlist.size() + "個");
+		Thread.sleep(300);
 	}
 
-	public void get(Food getFood, String name) throws InterruptedException {
+	private void get(Food getFood, String name) throws InterruptedException {
 		// 私は、Foodがないと取り除けない
-
-		while (true) {
-			while (foodlist.size() > 0) {
-				foodlist.remove(0);
-				sizenow = sizenow - 1;
-				System.out.println(name + "が" + getFood.food + "を食べました" + ":" + sizenow + "個");
-			}
-			// whileだとぐるぐる回ってデッドロックになりそう・・。
-			if (foodlist.isEmpty() == true) {
-				System.out.println(name + "は待ちます");
-				Thread.sleep(1000);
-			}
+		if (foodlist.isEmpty() == true) {
+			System.out.println(foodlist.size() + "個なので" + name + "は待ちます");
+			Thread.sleep(1000);
+		} else {
+			foodlist.remove(0);
+			System.out.println(name + "が" + "を食べました" + ":" + foodlist.size() + "個");
+			Thread.sleep(500);
 		}
 	}
 

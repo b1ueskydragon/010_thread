@@ -11,13 +11,10 @@ public class Me extends Thread {
 	}
 
 	public void run() {
-		/// ここに具体的になにか書いてあげないと実行できない///
-		try {
-			Food getFood = new Food();
-			fridge.get(getFood, myname);
-		} catch (InterruptedException e) {
+		// fridge.get( myname);
+		while (true) {
+			fridge.syncFridge(null, fridge, null, myname);
 		}
-
 	}
 
 }
