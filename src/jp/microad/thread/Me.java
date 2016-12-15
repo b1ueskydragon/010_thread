@@ -11,9 +11,9 @@ public class Me extends Thread {
 	}
 
 	public void run() {
-		// fridge.get( myname);
+		
 		while (true) {
-			fridge.syncFridge(null, fridge, null, myname);
+			fridge.syncFridge(null, fridge, myname);
 		}
 	}
 

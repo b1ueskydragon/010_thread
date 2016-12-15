@@ -14,7 +14,7 @@ public class Dad extends Thread {
 		/// ここに具体的になにか書いてあげないと実行できない///
 		while (true) {
 			Food putFood = new Food(); // 毎回新しいFoodを作る
-			fridge.syncFridge(putFood, fridge, dadname, null); // (O)
+			fridge.syncFridge(putFood, fridge, dadname); // (O)
 			// fridge.put(putFood, dadname); (X)
 		}
 
