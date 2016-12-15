@@ -46,7 +46,7 @@ public class Fridge {
 	public synchronized void syncFridge(Food food, Fridge fridge, String name) {
 		// 動作の制限（協調）
 		// String型のnameなのは一緒なので、無駄なパラメータは減らし統一させる。
-		// パパ１、パパ２、ちゃん、ちゃん弟がみんな同じ冷蔵庫を共有・かつ、それぞれ同時に触ることはできないß
+		// パパ１、パパ２、ちゃん、ちゃん弟がみんな同じ冷蔵庫を共有・かつ、それぞれ同時に触ることはできない。
 		try {
 			// 手元にフードがあれば冷蔵庫に追加できる
 			if (food != null) {
