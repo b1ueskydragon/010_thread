@@ -1,4 +1,4 @@
-package jp.microad.thread;
+package jp.ma.thread;
 
 import java.util.List;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package jp.microad.thread;
+package jp.ma.thread;
 
 public class Me extends Thread {
 
