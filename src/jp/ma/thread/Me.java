@@ -11,10 +11,8 @@ public class Me extends Thread {
   }
 
   public void run() {
-
     while (true) {
       fridge.syncFridge(null, fridge, myname);
     }
   }
-
 }

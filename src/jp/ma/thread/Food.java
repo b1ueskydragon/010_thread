@@ -5,7 +5,6 @@ public class Food {
   String food = "チキン";
   String newfood = "";
 
-  // コンストラクタ
   Food(String food) {
     this.food = food;
   }
@@ -13,5 +12,4 @@ public class Food {
   Food() {
     this.newfood = food;
   }
-
 }

@@ -17,6 +17,5 @@ public class Dad extends Thread {
       fridge.syncFridge(putFood, fridge, dadname); // (O)
       // fridge.put(putFood, dadname); (X)
     }
-
   }
 }
