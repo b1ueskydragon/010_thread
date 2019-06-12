@@ -5,7 +5,20 @@ import java.util.LinkedList;
 
 import static java.lang.System.out;
 
+/**
+ * Singleton (lazy)
+ * instantiation is allowed only in this class
+ */
 class Fridge {
+
+  private static Fridge fridge;
+
+  private Fridge() { /* nop */ }
+
+  static Fridge getInstance() {
+    if (fridge == null) fridge = new Fridge();
+    return fridge;
+  }
 
   private Deque<Food> buffer = new LinkedList<>();
 

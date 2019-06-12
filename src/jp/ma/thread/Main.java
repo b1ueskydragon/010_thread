@@ -4,7 +4,7 @@ public class Main {
 
   public static void main(String[] args) {
 
-    Fridge fridge = new Fridge();
+    Fridge fridge = Fridge.getInstance();
 
     Thread parent = new Thread(new Parent(fridge, "Mom"));
     Thread parent2 = new Thread(new Parent(fridge, "Dad"));
