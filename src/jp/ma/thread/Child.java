@@ -2,8 +2,8 @@ package jp.ma.thread;
 
 public class Child extends Thread {
 
-  Fridge fridge; // newしてはいけない
-  String name;
+  private final Fridge fridge;
+  private final String name;
 
   Child(Fridge fridge, String name) {
     this.fridge = fridge;

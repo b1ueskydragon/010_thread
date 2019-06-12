@@ -2,14 +2,10 @@ package jp.ma.thread;
 
 public class Food {
 
-  String food = "チキン";
-  String newfood = "";
+  final String food;
 
   Food(String food) {
     this.food = food;
   }
 
-  Food() {
-    this.newfood = food;
-  }
 }
