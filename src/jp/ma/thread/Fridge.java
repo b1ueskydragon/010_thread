@@ -1,17 +1,16 @@
 package jp.ma.thread;
 
-import java.util.List;
-import java.util.ArrayList;
+import java.util.*;
 
 class Fridge {
 
-  private List<Food> buffer = new ArrayList<>(); // TODO Deque
+  private Deque<Food> buffer = new LinkedList<>();
 
   /**
    * Responsibility : PUT ONLY
    */
   private void put(Food food, String name) throws InterruptedException {
-    buffer.add(food);
+    buffer.addLast(food);
     // TODO fix params, replace to logger
     System.out.println(name + " put a " + food.food + ", the number of foods : " + buffer.size());
     Thread.sleep(300);
@@ -25,7 +24,7 @@ class Fridge {
       System.out.println("the number of foods is " + buffer.size() + ", " + name + " is waiting");
       Thread.sleep(500);
     } else {
-      buffer.remove(0);
+      buffer.removeFirst();
       System.out.println(name + " takes a food" + ", the number of foods :" + buffer.size());
       Thread.sleep(300);
     }
