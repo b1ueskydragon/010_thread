@@ -13,7 +13,7 @@ public class Child implements Runnable {
   public void run() {
     //noinspection InfiniteLoopStatement
     while (true) {
-      fridge.sync(new Food(), name);
+      fridge.sync(name);
     }
   }
 }

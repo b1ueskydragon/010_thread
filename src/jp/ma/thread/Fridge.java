@@ -5,7 +5,6 @@ import java.util.LinkedList;
 
 import static java.lang.System.out;
 
-
 class Fridge {
 
   private Deque<Food> buffer = new LinkedList<>();
@@ -24,13 +23,17 @@ class Fridge {
    */
   private void get(String name) throws InterruptedException {
     if (buffer.isEmpty()) {
-      out.println("the number of foods is " + buffer.size() + ", " + name + " is waiting");
+      out.println(name + " is waiting");
       Thread.sleep(500);
     } else {
       buffer.removeFirst();
-      out.println(name + " takes a food" + ", the number of foods :" + buffer.size());
+      out.println(name + " takes a food, the number of foods :" + buffer.size());  // TODO food name
       Thread.sleep(300);
     }
+  }
+
+  void sync(String name) {
+    sync(null, name); // TODO no null
   }
 
   /**
@@ -38,7 +41,7 @@ class Fridge {
    */
   synchronized void sync(Food food, String name) {
     try {
-      if (food.isCookingDone()) put(food, name);
+      if (food != null) put(food, name);
       else get(name);
     } catch (InterruptedException e) {
       e.printStackTrace();
