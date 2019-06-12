@@ -1,6 +1,6 @@
 package jp.ma.thread;
 
-public class Food {
+class Food {
 
   final String food;
 

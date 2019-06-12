@@ -12,8 +12,8 @@ public class Parent implements Runnable {
 
   public void run() {
     while (true) {
-      Food putFood = new Food("Chicken");
-      fridge.syncFridge(putFood, fridge, name); // (O)
+      Food food = new Food("Chicken");
+      fridge.syncFridge(food, fridge, name); // (O)
       // fridge.put(putFood, name); (X)
     }
   }
