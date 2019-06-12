@@ -1,21 +1,21 @@
 package jp.ma.thread;
 
-public class Dad extends Thread {
+public class Parent extends Thread {
 
   Fridge fridge; // newしないこと
-  String dadname;
+  String name;
 
-  Dad(Fridge fridge, String dadname) {
+  Parent(Fridge fridge, String name) {
     this.fridge = fridge; // (左)このフィールドのfridge = (右)受け取るfridge
-    this.dadname = dadname;
+    this.name = name;
   }
 
   public void run() {
     /// ここに具体的になにか書いてあげないと実行できない///
     while (true) {
       Food putFood = new Food(); // 毎回新しいFoodを作る
-      fridge.syncFridge(putFood, fridge, dadname); // (O)
-      // fridge.put(putFood, dadname); (X)
+      fridge.syncFridge(putFood, fridge, name); // (O)
+      // fridge.put(putFood, name); (X)
     }
   }
 }

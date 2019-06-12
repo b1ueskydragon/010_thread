@@ -4,16 +4,16 @@ public class Main {
 
   public static void main(String[] args) {
 
-    // TODO 'Dad' rename to 'Parents', 'Me' rename to 'Child'
     Fridge fridge = new Fridge(); // 同じ冷蔵庫を使うべき=パラメータで渡す
-    Dad dad = new Dad(fridge, "ママ");
-    Dad dad2 = new Dad(fridge, "パパ");
-    Me me = new Me(fridge, "ちゃん");
-    Me me2 = new Me(fridge, "ちゃん弟");
+    Parent parent = new Parent(fridge, "Mom");
+    Parent parent2 = new Parent(fridge, "Dad");
+    Child child = new Child(fridge, "Alex");
+    Child child2 = new Child(fridge, "Rick");
 
-    dad.start();
-    me.start();
-    dad2.start();
-    me2.start();
+    parent.start();
+    child.start();
+    parent2.start();
+    child2.start();
+
   }
 }
