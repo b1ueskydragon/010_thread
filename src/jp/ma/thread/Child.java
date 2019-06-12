@@ -11,8 +11,9 @@ public class Child implements Runnable {
   }
 
   public void run() {
+    //noinspection InfiniteLoopStatement
     while (true) {
-      fridge.syncFridge(null, fridge, name);
+      fridge.sync(new Food(), name);
     }
   }
 }

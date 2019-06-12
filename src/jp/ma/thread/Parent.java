@@ -11,10 +11,9 @@ public class Parent implements Runnable {
   }
 
   public void run() {
+    //noinspection InfiniteLoopStatement
     while (true) {
-      Food food = new Food("Chicken");
-      fridge.syncFridge(food, fridge, name); // (O)
-      // fridge.put(putFood, name); (X)
+      fridge.sync(new Food("Chicken"), name);
     }
   }
 }
