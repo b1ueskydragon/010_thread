@@ -1,6 +1,6 @@
 package jp.ma.thread;
 
-public class Child extends Thread {
+public class Child implements Runnable {
 
   private final Fridge fridge;
   private final String name;

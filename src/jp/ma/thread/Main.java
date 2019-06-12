@@ -4,11 +4,12 @@ public class Main {
 
   public static void main(String[] args) {
 
-    Fridge fridge = new Fridge(); // 同じ冷蔵庫を使うべき=パラメータで渡す
-    Parent parent = new Parent(fridge, "Mom");
-    Parent parent2 = new Parent(fridge, "Dad");
-    Child child = new Child(fridge, "Alex");
-    Child child2 = new Child(fridge, "Rick");
+    Fridge fridge = new Fridge();
+
+    Thread parent = new Thread(new Parent(fridge, "Mom"));
+    Thread parent2 = new Thread(new Parent(fridge, "Dad"));
+    Thread child = new Thread(new Child(fridge, "Alex"));
+    Thread child2 = new Thread(new Child(fridge, "Rick"));
 
     parent.start();
     child.start();
@@ -16,4 +17,5 @@ public class Main {
     child2.start();
 
   }
+
 }
